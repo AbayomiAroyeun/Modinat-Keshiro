@@ -22,13 +22,18 @@ body {
   background: #fff;
 }
 
+#social-icons {
+  display: flex;
+  gap: 10px;
+}
+
 #social-icons img {
   margin-right: 10px;
 }
 
 #top-bar ul {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   list-style: none;
 }
 
@@ -231,6 +236,20 @@ body {
   #wear-display img {
     height: 70%;
   }
+
+    /* Move social-icons to bottom on small screens only */
+  #social-icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 215, 0, 0.95);
+    padding: 10px 0;
+    z-index: 2000;
+}
 }
 
 @media (max-width: 480px) {
@@ -247,6 +266,18 @@ body {
   #wear-display img {
     height: 50%;
   }
+
+  /* Move social-icons to bottom on small screens only */
+  #social-icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 215, 0, 0.95);
+    padding: 10px 0;
+    z-index: 2000;
+  }
 }
-
-

@@ -47,6 +47,7 @@ function renderWear() {
   ).join('');
 }
 
+
 function nextWear() {
   wearIndex = (wearIndex + 1) % wearImages.length;
   renderWear();
@@ -97,3 +98,5 @@ window.addEventListener('load', () => {
     });
   }
 });
+
+

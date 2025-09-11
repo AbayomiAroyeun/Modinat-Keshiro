@@ -11,10 +11,18 @@
 <!-- Top Header -->
 <header id="top-header">
   <div id="social-icons">
-    <a href="https://wa.me/13475964919" target="_blank"><img src="image/whatsapp-icon.png" alt="WhatsApp"></a>
-    <a href="https://www.facebook.com/share/1Faj4Qh5Pv/" target="_blank"><img src="image/facebook-icon.png" alt="Facebook"></a>
-    <a href="https://www.instagram.com/medinakeshiro" target="_blank"><img src="image/instagram-icon.png" alt="Instagram"></a>
-    <a href="https://www.tiktok.com/@medina_keshiro" target="_blank"><img src="image/tiktok-icon.png" alt="TikTok"></a>
+      <a href="https://wa.me/13475964919" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="image/whatsapp-icon.png" width="30" height="30" alt="WhatsApp">
+      </a>
+      <a href="https://www.facebook.com/share/1Faj4Qh5Pv/" target="_blank" aria-label="Visit Facebook Page">
+        <img src="image/facebook-icon.png" width="30" height="30" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/medinakeshiro" target="_blank" aria-label="Visit Instagram Profile">
+        <img src="image/instagram-icon.png" width="30" height="30" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@medina_keshiro" target="_blank" aria-label="Visit TikTok Profile">
+        <img src="image/tiktok-icon.png" width="30" height="30" alt="TikTok">
+      </a>
   </div>
   <div class="brand"><h1 id="mo">MO - LUXURY</h1></div>
   <nav id="top-bar">
@@ -27,18 +35,19 @@
   </nav>
 </header>
 
-<!-- Date & Location Display -->
-<div id="datetime-location" class="fade-section">
+<!-- Date & Location -->
+<div id="datetime-location" class="fade-section" aria-live="polite">
   <span id="time"></span> | <span id="location"></span>
 </div>
 
 <!-- Wear Display Gallery -->
-<section id="wear-display" class="fade-section"></section>
+<section id="wear-display" class="fade-section" aria-label="Wear Collection Gallery"></section>
 
 <!-- Luxury Video Section -->
 <section id="luxury">
   <video autoplay muted loop playsinline id="bgVideo">
     <source src="image/mo-lion.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
   <h1 id="elegance">Beyond Fashion,..elegance in Luxury</h1>
@@ -46,7 +55,9 @@
 
 <!-- Pictures Section -->
 <section id="pictures">
-  <figure id="cover-picture"><img src="image/modga9.jpg" alt="Featured Fashion Design"></figure>
+  <figure id="cover-picture">
+    <img src="image/modga9.jpg" alt="Featured Fashion Design">
+  </figure>
   <article id="collection-pictures">
     <p>
       This modern fashion gallery is not just a collection; it's a statement.
@@ -60,19 +71,19 @@
 </section>
 
 <!-- Modal for Gallery -->
-<div id="image-modal" role="dialog" aria-modal="true">
-  <button id="modal-close">&times;</button>
+<div id="image-modal" role="dialog" aria-modal="true" aria-labelledby="modal-img">
+  <button id="modal-close" aria-label="Close">&times;</button>
   <img id="modal-img" src="" alt="Selected Design Preview">
 </div>
 
 <!-- Footer -->
 <footer id="bottom">
-  <nav class="footer-section">
+  <nav aria-label="Footer Navigation" class="footer-section">
     <ul id="questions">
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="aboutUs.html">Our Story</a></li>
       <li><a href="#">Shipping & Refunds</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="contact.html" class="contact">Contact Us</a></li>
     </ul>
   </nav>
   <div id="logo" class="footer-section">
@@ -87,6 +98,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

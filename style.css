@@ -1,4 +1,4 @@
-/* Global */
+/* Global Styles */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif; background-color: aliceblue; }
 
@@ -8,15 +8,15 @@ body { font-family: 'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif; 
 #social-icons img { width: 30px; height: 30px; transition: transform 0.3s, opacity 0.3s; }
 #social-icons img:hover { transform: scale(1.3); opacity: 0.8; }
 .brand h1 { font-size: 1.8rem; color: #ffd700; text-align: center; flex: 1; }
-#top-bar ul { list-style: none; display: flex; gap: 1rem; flex-wrap: wrap; }
+#top-bar ul { list-style: none; display: flex; gap: 1rem; }
 #top-bar a { text-decoration: none; color: black; font-weight: bold; }
 
 /* Fade Sections */
 .fade-section { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .fade-section.visible { opacity: 1; transform: translateY(0); }
 
-/* Wear Display */
-#wear-display { display: flex; justify-content: center; align-items: center; overflow-x: auto; scroll-behavior: smooth; width: 100%; height: 300px; margin: 1rem 0; border: 3px solid #DAA520; border-radius: 6px; gap: 10px; perspective: 1000px; }
+/* Wear Display Gallery */
+#wear-display { display: flex; justify-content: center; align-items: center; overflow-x: auto; width: 100%; min-height: 250px; margin: 1rem 0; border: 3px solid #DAA520; border-radius: 6px; gap: 10px; perspective: 1000px; scroll-behavior: smooth; }
 #wear-display img { flex: 0 0 auto; height: 90%; margin: 0 5px; object-fit: cover; cursor: pointer; opacity: 0.4; transition: opacity 0.25s ease, transform 0.25s ease; }
 #wear-display img.active { opacity: 1; transform: scale(1.05); }
 
@@ -26,10 +26,11 @@ body { font-family: 'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif; 
 #luxury .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
 #luxury h1 { position: absolute; color: #ffd700; font-style: italic; font-weight: 100; font-size: 2rem; text-align: center; }
 
-/* Pictures Section */
+/* Pictures & Collection View */
 #pictures { display: flex; gap: 20px; padding: 20px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
 #cover-picture img { max-width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 #collection-pictures { display: flex; flex-direction: column; gap: 15px; flex: 1; min-width: 250px; }
+#collection-pictures p { line-height: 1.6; }
 #collection-view { border: 2px solid #DAA520; border-radius: 10px; padding: 15px; text-align: center; background-color: rgba(218,165,32,0.1); transition: transform 0.3s, box-shadow 0.3s; }
 #collection-view:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 #collection-view h3 a { text-decoration: none; color: #c0392b; font-weight: bold; font-size: 1.2rem; }
@@ -45,31 +46,29 @@ footer { text-align: center; background: #222; color: white; padding: 2rem 1rem;
 #logo img { max-width: 100%; }
 #email-link { color: #fff; text-decoration: underline; transition: color 0.3s, transform 0.3s; }
 #email-link:hover { color: #ffd700; transform: scale(1.05); }
-#social-icons-footer { margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; transition: all 0.5s ease; opacity: 0; transform: translateY(50px); }
+#social-icons-footer { margin-top: 1rem; display: none; justify-content: center; gap: 1rem; opacity: 0; transform: translateY(20px); }
 #social-icons-footer img { width: 40px; height: 40px; transition: transform 0.3s, opacity 0.3s; }
 #social-icons-footer img:hover { transform: scale(1.3); opacity: 0.9; }
 
-/* Date & Location Box */
-#datetime-location { text-align: center; font-family: Arial,sans-serif; font-size: 1rem; font-weight: 500; color: #444; padding: 0.5rem 1rem; background: rgba(255,215,0,0.1); border-radius: 8px; margin: 1rem auto; max-width: 500px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+/* Date & Location */
+#datetime-location { text-align: center; font-family: 'Arial', sans-serif; font-size: 1rem; font-weight: 500; color: #444; padding: 0.5rem 1rem; background: rgba(255, 215, 0, 0.1); border-radius: 8px; margin: 1rem auto; max-width: 500px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; }
 
 /* Responsive */
 @media (max-width: 768px) {
   #social-icons { display: none; }
-  #top-bar ul { justify-content: center; }
+  #social-icons-footer { display: flex; }
   #questions { flex-direction: column; align-items: center; }
   #questions a { display: block; width: 200px; background: #333; border: 1px solid #555; text-align: center; }
   #questions a:hover { background: #555; }
 }
+
 @media (max-width: 480px) {
   #pictures { flex-direction: column; align-items: center; }
   #cover-picture, #collection-pictures { width: 100%; }
   #collection-view { width: 90%; }
   #datetime-location { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
-  #wear-display { height: 250px; }
-  #top-header { flex-direction: column; text-align: center; }
-  .brand { order: 1; margin-bottom: 0.5rem; }
-  #top-bar ul { flex-direction: column; gap: 0.5rem; }
 }
+
 
 
 

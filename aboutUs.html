@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+
+  body {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background-color:gold;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Container for floating/falling logos */
+  .logo-bg {
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+
+  .logo-bg div {
+    position:absolute;
+    background: url('image/logo.jpg') no-repeat center center; /* replace with your logo */
+    background-size: contain;
+    opacity:0.5;
+    filter: brightness(2) drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    animation: floatUp linear infinite, shimmerFade infinite;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-50px) rotate(360deg); }
+  }
+
+  @keyframes shimmerFade {
+    0% { opacity:0.3; }
+    50% { opacity:0.8; }
+    100% { opacity:0.3; }
+  }
+
+  .aboutUs {
+    position:relative;
+    z-index:1;
+    background-color:rgba(255,255,255,0.85);
+    padding:40px 50px;
+    border-radius:20px;
+    max-width:850px;
+    line-height:1.8;
+    font-size:1.15rem;
+    color:#333;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    text-align:justify;
+  }
+
+  .aboutUs span { color:#c0392b; font-weight:bold; }
+
+  @media(max-width:768px){
+    .aboutUs { padding:25px 30px; font-size:1rem; }
+  }
+
+  @media(max-width:480px){
+    .aboutUs { padding:20px; font-size:0.95rem; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="logo-bg" id="logo-bg"></div>
+
+  <p class="aboutUs">
+    We make beautiful dresses for strong women. At <span>Medinat Keshiro</span> we believe every woman deserves the best in what they wear, 
+    and every woman is a queen, who deserves affordable high-quality clothes. We specialize in excellent and creative designs with perfect completion to your needs. We craft outfits 
+    tailored to each individual, blending American styles with rich African styles. Whether you need a
+    glamorous party dress, a reception dress for wedding, a prom dress, a simple embellished suit, a casual outfit, or bespoke attire, here at <span>Medinat Keshiro</span>, we will make you feel 
+    confident, stunning and be your authentic self.
+  </p>
+
+  <script>
+    const container = document.getElementById('logo-bg');
+    const numLogos = 50; // number of floating/falling logos
+    for(let i=0; i<numLogos; i++){
+      const div = document.createElement('div');
+      const size = 15 + Math.random()*25; // size 15-40px
+      div.style.width = size + 'px';
+      div.style.height = size + 'px';
+      div.style.left = Math.random() * 100 + '%';
+      div.style.top = Math.random() * 100 + '%';
+      const duration = 10 + Math.random()*20; // float duration 10-30s
+      const fadeDuration = 2 + Math.random()*3; // shimmer fade duration
+      const delay = Math.random() * 10; // random delay
+      div.style.animation = `floatUp ${duration}s linear ${delay}s infinite, shimmerFade ${fadeDuration}s ease-in-out ${delay}s infinite`;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

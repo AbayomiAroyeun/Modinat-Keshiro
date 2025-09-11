@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6e3; /* subtle warm background */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth; /* smooth scrolling for browsers */
+  }
+
+  .faq-container {
+    background-color: #fff8dc; /* light gold-ish card */
+    border-radius: 15px;
+    padding: 30px 40px;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .faq-container h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #c0392b;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .faq-item {
+    background-color: rgba(192,57,43,0.05);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background-color 0.4s, box-shadow 0.4s;
+    position: relative;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .faq-item.active {
+    background-color: rgba(192,57,43,0.15);
+    box-shadow: 0 0 15px rgba(192,57,43,0.4);
+  }
+
+  .faq-item strong {
+    color: #c0392b;
+  }
+
+  /* Arrow indicator */
+  .faq-item::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #c0392b;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* Answer container with slide + fade */
+  .faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding-left: 0;
+    margin-top: 8px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    padding-left: 10px;
+  }
+
+  @media(max-width:480px){
+    .faq-container {
+      padding: 20px 25px;
+    }
+    .faq-container h3 {
+      font-size: 1.5rem;
+    }
+    .faq-item {
+      padding: 12px 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="faq-container">
+  <h3>FAQ</h3>
+  
+  <div class="faq-item">
+    <strong>Q:</strong> Do you offer home delivery?
+    <div class="faq-answer">
+      <strong>A:</strong> Yes, we provide convenient home delivery.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q:</strong> How can I track my order?
+    <div class="faq-answer">
+      <strong>A:</strong> You’ll receive information on SMS/WhatsApp once shipped.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q:</strong> Fastest way to contact?
+    <div class="faq-answer">
+      <strong>A:</strong> WhatsApp text or voice notes.
+    </div>
+  </div>
+</div>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Toggle active class
+      item.classList.toggle('active');
+
+      // Close others when one opens
+      faqItems.forEach(other => {
+        if(other !== item) {
+          other.classList.remove('active');
+        }
+      });
+
+      // Scroll into view smoothly
+      if(item.classList.contains('active')){
+        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 @ A.A | All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

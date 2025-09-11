@@ -1,102 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mo-Designs</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mo-Designs</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top Header -->
-  <header id="top-header">
-    <div id="social-icons">
-      <a href="https://wa.me/13475964919" target="_blank">
-        <img src="image/whatsapp-icon.png" width="30" alt="WhatsApp">
-      </a>
-      <a href="https://www.facebook.com/share/1Faj4Qh5Pv/" target="_blank">
-        <img src="image/facebook-icon.png" width="30" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/medinakeshiro" target="_blank">
-        <img src="image/instagram-icon.png" width="30" alt="Instagram">
-      </a>
-      <a href="https://www.tiktok.com/@medina_keshiro" target="_blank">
-        <img src="image/tiktok-icon.png" width="30" alt="TikTok">
-      </a>
-    </div>
 
-    <div class="brand">
-      <h1 id="mo">MO - LUXURY</h1>
-    </div>
-
-    <nav id="top-bar">
-      <ul>
-        <li>Home</li>
-        <li>New</li>
-        <li>Community</li>
-        <li>Collections</li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <!-- Date & Location -->
-  <div id="datetime-location"></div>
-
-  <!-- Wear Display Gallery -->
-  <section id="wear-display"></section>
-
-  <!-- Face Section -->
-  <section id="luxury">
-    <video autoplay muted loop playsinline id="bgVideo">
-      <source src="image/mo-lion.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="overlay"></div>
-    <h1 id="elegance">Beyond Fashion. Elegance in Luxury</h1>
-  </section>
-
-  <!-- Pictures Section -->
-  <div id="pictures">
-    <div id="cover-picture">
-      <img src="image/modga9.jpg" alt="Featured Design">
-    </div>
-    <div id="collection-pictures">
-      <p>This modern fashion gallery is not just a collection; it's a statement.
-         Our gallery curates a unique vision of modern design,
-         featuring pieces that blend art and clothing.
-         This collection is an immersive experience,
-         inviting to witness fashion not as a trend,
-         but as a wearable art form that redefines the modern wardrobe.
-      </p>
-      <div id="collection-view">
-        <h3><a href="gallerys.html" class="gallerys-link">Take a look</a></h3>
-      </div>
-    </div>
+<!-- Top Header -->
+<header id="top-header">
+  <div id="social-icons">
+    <a href="https://wa.me/13475964919" target="_blank"><img src="image/whatsapp-icon.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/share/1Faj4Qh5Pv/" target="_blank"><img src="image/facebook-icon.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/medinakeshiro" target="_blank"><img src="image/instagram-icon.png" alt="Instagram"></a>
+    <a href="https://www.tiktok.com/@medina_keshiro" target="_blank"><img src="image/tiktok-icon.png" alt="TikTok"></a>
   </div>
-
-  <!-- Modal for Gallery -->
-  <div id="image-modal">
-    <span id="modal-close">&times;</span>
-    <img id="modal-img" src="" alt="Modal Image">
-  </div>
-
-  <!-- Bottom / Footer -->
-  <div id="bottom">
-    <ul id="questions">
-      <li>FAQ</li>
-      <li>Our Story</li>
-      <li>Shipping & Refunds</li>
-      <li>Contact us</li>
+  <div class="brand"><h1 id="mo">MO - LUXURY</h1></div>
+  <nav id="top-bar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Community</a></li>
+      <li><a href="gallerys.html">Collections</a></li>
     </ul>
-  <div id="logo"><img id="logo-img" src="image/logo.jpg" width="250"></div>
-    <div id="email-container">
-      <a id="email-link" href="#">Email Us</a>
-    </div>
-  </div>
+  </nav>
+</header>
 
-  <script src="script.js"></script>
+<!-- Date & Location Display -->
+<div id="datetime-location" class="fade-section">
+  <span id="time"></span> | <span id="location"></span>
+</div>
+
+<!-- Wear Display Gallery -->
+<section id="wear-display" class="fade-section"></section>
+
+<!-- Luxury Video Section -->
+<section id="luxury">
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="image/mo-lion.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <h1 id="elegance">Beyond Fashion,..elegance in Luxury</h1>
+</section>
+
+<!-- Pictures Section -->
+<section id="pictures">
+  <figure id="cover-picture"><img src="image/modga9.jpg" alt="Featured Fashion Design"></figure>
+  <article id="collection-pictures">
+    <p>
+      This modern fashion gallery is not just a collection; it's a statement.
+      Our gallery curates a unique vision of modern design, featuring pieces that blend art and clothing.
+      This collection is an immersive experience, inviting you to witness fashion not as a trend, but as wearable art.
+    </p>
+    <div id="collection-view">
+      <h3><a href="gallerys.html" class="gallerys-link">Take a look</a></h3>
+    </div>
+  </article>
+</section>
+
+<!-- Modal for Gallery -->
+<div id="image-modal" role="dialog" aria-modal="true">
+  <button id="modal-close">&times;</button>
+  <img id="modal-img" src="" alt="Selected Design Preview">
+</div>
+
+<!-- Footer -->
+<footer id="bottom">
+  <nav class="footer-section">
+    <ul id="questions">
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="aboutUs.html">Our Story</a></li>
+      <li><a href="#">Shipping & Refunds</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div id="logo" class="footer-section">
+    <img src="image/logo.jpg" width="250" alt="Mo-Designs Logo">
+  </div>
+  <div id="social-icons-footer" class="footer-section"></div>
+  <div id="email-container" class="footer-section">
+    <a id="email-link" href="mailto:mkdesignsbymo@gmail.com">Email Us</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
